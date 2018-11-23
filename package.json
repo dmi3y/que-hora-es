@@ -2,17 +2,16 @@
   "fitbit": {
     "appUUID": "46c05084-af79-40f6-ba5c-a53075d2e15b",
     "appType": "clockface",
-    "appDisplayName": "¿A que hora?",
+    "appDisplayName": "¿A qué hora?",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [],
     "buildTargets": [
-      "higgs",
       "meson"
     ],
     "i18n": {
       "en": {
-        "name": "¿A que hora?"
+        "name": "¿A qué hora?"
       }
     }
   },
