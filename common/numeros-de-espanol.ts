@@ -32,7 +32,6 @@ let numberMap: {[key: number]: string} = {
 }
 
 export function escribeNumero(number: number): string {
-
     if (numberMap[number]) {
         return numberMap[number];
     }

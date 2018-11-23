@@ -30,7 +30,7 @@ clock.ontick = (evt) => {
   let cuando = 'mañana'
   if (horas < 6) cuando = 'madrugada'
   if (horas > 12) cuando = 'tarde'
-  if (horas > 8) cuando = 'noche'
+  if (horas > 20) cuando = 'noche'
   vez.text = `${tiempo}`
   hora.text = `${horasLeteras}`
 
