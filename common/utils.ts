@@ -1,9 +1,10 @@
 // Add zero in front of numbers < 10
-export function zeroPad(i) {
+export function zeroPad(i: number) {
+  let out: number | string = i
   if (i < 10) {
-    i = "0" + i;
+    out = "0" + i;
   }
-  return i;
+  return out;
 }
 
 /**
@@ -13,11 +14,11 @@ export function zeroPad(i) {
  * @param number
  * @returns {number}
  */
-export function roundToBase(number) {
+export function roundToBase(number: number) {
     const pow = number.toString().length - 1;
     const base = Math.pow(10, pow);
     return Math.floor(number / base) * base;
 }
 
 // get random element from array
-export const getRandomItem = items => items[Math.floor(Math.random()*items.length)]
+export const getRandomItem = (items: any[]) => items[Math.floor(Math.random()*items.length)]

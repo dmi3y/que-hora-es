@@ -3,35 +3,35 @@ import { roundToBase } from './utils';
 /**
  * @returns {Map}
  */
-let numberMap = {
-    "0": 'en punto',
-    "1": 'una',
-    "2": 'dos',
-    "3": 'tres',
-    "4": 'cuatro',
-    "5": 'cinco',
-    "6": 'seis',
-    "7": 'siete',
-    "8": 'ocho',
-    "9": 'nueve',
-    "10": 'diez',
-    "11": 'once',
-    "12": 'doce',
-    "13": 'trece',
-    "14": 'catorce',
-    "15": 'quince',
-    "16": 'dieciséis', // has extra accent
-    "20": 'veinte',
-    "22": 'veintidós', // accent
-    "23": 'veintitrés', // accent
-    "26": 'veintiséis', // accent
-    "30": 'treinta',
-    "40": 'cuarenta',
-    "50": 'cincuenta',
-    "60": 'sesenta'
+let numberMap: {[key: number]: string} = {
+    0: 'en punto',
+    1: 'una',
+    2: 'dos',
+    3: 'tres',
+    4: 'cuatro',
+    5: 'cinco',
+    6: 'seis',
+    7: 'siete',
+    8: 'ocho',
+    9: 'nueve',
+    10: 'diez',
+    11: 'once',
+    12: 'doce',
+    13: 'trece',
+    14: 'catorce',
+    15: 'quince',
+    16: 'dieciséis', // has extra accent
+    20: 'veinte',
+    22: 'veintidós', // accent
+    23: 'veintitrés', // accent
+    26: 'veintiséis', // accent
+    30: 'treinta',
+    40: 'cuarenta',
+    50: 'cincuenta',
+    60: 'sesenta'
 }
 
-export function escribeNumero(number) {
+export function escribeNumero(number: number): string {
 
     if (numberMap[number]) {
         return numberMap[number];
