@@ -1,10 +1,7 @@
 import { roundToBase } from './utils';
 
-/**
- * @returns {Map}
- */
-let numberMap: {[key: number]: string} = {
-    0: 'en punto',
+let numerosDeLetras: {[key: number]: string} = {
+    0: 'cero',
     1: 'una',
     2: 'dos',
     3: 'tres',
@@ -20,34 +17,27 @@ let numberMap: {[key: number]: string} = {
     13: 'trece',
     14: 'catorce',
     15: 'quince',
-    16: 'dieciséis', // has extra accent
+    16: 'dieciséis',
     20: 'veinte',
-    22: 'veintidós', // accent
-    23: 'veintitrés', // accent
-    26: 'veintiséis', // accent
+    22: 'veintidós',
+    23: 'veintitrés',
+    26: 'veintiséis',
     30: 'treinta',
     40: 'cuarenta',
     50: 'cincuenta',
     60: 'sesenta'
 }
 
-export function escribeNumero(number: number): string {
-    if (numberMap[number]) {
-        return numberMap[number];
-    }
-
-    if (number >= 17 && number <= 19) {
-        return 'dieci' + escribeNumero(number - 10);
-    }
-    if (number >= 21 && number <= 29) {
-        return 'veinti' + escribeNumero(number - 20);
-    }
-    if (number > 30 && number <= 999) {
-        const roundedDown = roundToBase(number);
-        const modulo = number % roundedDown;
-        if (number > 30 && number < 100) {
-            return escribeNumero(roundedDown) + ' y ' + escribeNumero(modulo);
-        }
-        return escribeNumero(roundedDown) + ' ' + escribeNumero(modulo);
+export function escribeNumero(numero: number): string[] {
+    if (numerosDeLetras.hasOwnProperty(numero))  {
+        return [numerosDeLetras[numero]]
+    } else if (numero >= 17 && numero <= 19) {
+        return ['dieci' + escribeNumero(numero - 10)]
+    } else if (numero >= 21 && numero <= 29) {
+        return ['veinti' + escribeNumero(numero - 20)]
+    } else if (numero > 30) {
+        const roundedDown = roundToBase(numero);
+        const modulo = numero % roundedDown;
+        return [...escribeNumero(roundedDown), ...escribeNumero(modulo)]
     }
 }

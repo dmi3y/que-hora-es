@@ -7,13 +7,7 @@ export function zeroPad(i: number) {
   return out;
 }
 
-/**
- * Rounds the number down to whole base number
- * e.g. 73 -> 70, 678 -> 600
- *
- * @param number
- * @returns {number}
- */
+// Rounds the number down to whole base number
 export function roundToBase(number: number) {
     const pow = number.toString().length - 1;
     const base = Math.pow(10, pow);
