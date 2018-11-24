@@ -1,5 +1,10 @@
 {
   "version": "1.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmi3y/a-que-hora"
+  },
+  "license": "MIT",
   "fitbit": {
     "appUUID": "46c05084-af79-40f6-ba5c-a53075d2e15b",
     "appType": "clockface",
