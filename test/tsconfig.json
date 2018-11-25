@@ -1,1 +1,6 @@
-{}
+{
+    "compilerOptions": {
+        "sourceMap": false,
+        "isolatedModules": true
+    }
+}
