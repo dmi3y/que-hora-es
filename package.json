@@ -24,9 +24,14 @@
   "devDependencies": {
     "@fitbit/sdk": "~1.0.0",
     "@fitbit/sdk-cli": "^1.0.0",
-    "fitbit-sdk-types": "^2.0.1"
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.10",
+    "fitbit-sdk-types": "^2.0.1",
+    "mocha": "^5.2.0",
+    "ts-mocha": "^2.0.0"
   },
   "scripts": {
+    "test": "ts-mocha -p test/tsconfig.json test/**/*spec.ts",
     "build": "fitbit-build"
   }
 }
