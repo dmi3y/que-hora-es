@@ -9,7 +9,6 @@ const ampm = document.getElementById("ampm");
 const vez = document.getElementById("vez");
 const hora = document.getElementById("hora");
 const minuto = document.getElementById("minuto");
-const MAX_MINUTOS_LENGTH = 15
 
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
@@ -26,5 +25,5 @@ clock.ontick = (evt) => {
   vez.text = `${tiempo}`
   hora.text = `${horasLeteras}`
   minuto.text = `${preMinuto} ${minutosLeteras}`
-  ampm.text = `de la ${cuando}`;
+  ampm.text = `${cuando}`;
 }
