@@ -32,6 +32,8 @@
   },
   "scripts": {
     "test": "ts-mocha -p test/tsconfig.json test/**/*spec.ts",
-    "build": "fitbit-build"
+    "build": "fitbit-build",
+    "preversion": "npm run test",
+    "postversion": "npm run build && cp build/app.fba releases/a-que-hora-${npm_package_version}.fba"
   }
 }
