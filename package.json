@@ -1,5 +1,6 @@
 {
   "version": "1.1.2",
+  "name": "que-hora-es",
   "repository": {
     "type": "git",
     "url": "https://github.com/dmi3y/que-hora-es"
