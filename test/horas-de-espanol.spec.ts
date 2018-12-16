@@ -1,7 +1,7 @@
 import * as assert from 'assert'
 import 'mocha'
 
-import horasDeEspanol from '../app/horas-de-espanol'
+import horasDeEspanol, {Opciones} from '../app/horas-de-espanol'
 
 describe('Horas de espanol', function () {
   describe('Horas especiales', function () {

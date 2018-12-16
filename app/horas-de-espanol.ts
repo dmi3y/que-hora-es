@@ -3,6 +3,26 @@ import { type } from 'os';
 
 const MAX_MINUTOS_LENGTH = 15
 
+export type Opciones = {
+    usarEnPunto?: boolean
+    usarMedia?: boolean
+    usarCuarto?: boolean
+    usarPara?: boolean
+    usarMenos?: boolean
+    usarCon?: boolean
+    usarY?: boolean
+    usarHorasCortas?: Boolean
+}
+
+export type HorasNormales = {
+    tiempo: string
+    horasLeteras: string
+    minutosLeteras: string
+    preMinuto: string
+    cuando: string
+}
+
+
 export default (
     horas: number,
     minutos: number,
