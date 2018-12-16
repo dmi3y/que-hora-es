@@ -1,12 +1,16 @@
 import * as assert from 'assert'
 import 'mocha'
 
-import horasDeEspanol from '../common/horas-de-espanol'
+import horasDeEspanol from '../app/horas-de-espanol'
 
 describe('Horas de espanol', function () {
   describe('Horas especiales', function () {
+    const opciones: Opciones = {
+      usarHorasCortas: true,
+      usarEnPunto: true
+    }
     it('debera correcto salida con 1:00', function () {
-      const unaDeManana = horasDeEspanol(1, 0)
+      const unaDeManana = horasDeEspanol(1, 0, opciones)
       assert.deepStrictEqual(unaDeManana, {
         tiempo: 'Es la',
         horasLeteras: 'una',
@@ -17,7 +21,7 @@ describe('Horas de espanol', function () {
     });
 
     it('debera correcto salida con 13:00', function () {
-      const unaDeTarde = horasDeEspanol(13, 0)
+      const unaDeTarde = horasDeEspanol(13, 0, opciones)
       assert.deepStrictEqual(unaDeTarde, {
         tiempo: 'Es la',
         horasLeteras: 'una',
@@ -28,7 +32,7 @@ describe('Horas de espanol', function () {
     });
 
     it('debera correcto salida con 12:00', function () {
-      const mediodia = horasDeEspanol(12, 0)
+      const mediodia = horasDeEspanol(12, 0, opciones)
       assert.deepStrictEqual(mediodia, {
         tiempo: 'Son las',
         horasLeteras: 'doce',
@@ -39,7 +43,7 @@ describe('Horas de espanol', function () {
     });
 
     it('debera correcto salida con 00:00', function () {
-      const medianoche = horasDeEspanol(0, 0)
+      const medianoche = horasDeEspanol(0, 0, opciones)
       assert.deepStrictEqual(medianoche, {
         tiempo: 'Son las',
         horasLeteras: 'doce',

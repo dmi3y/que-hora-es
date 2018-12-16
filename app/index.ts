@@ -1,6 +1,8 @@
 import clock from "clock";
 import document from "document";
-import horasDeEspanol from "../common/horas-de-espanol"
+import { preferences } from "user-settings"
+import { getRandomItem } from "../common/utils"
+import horasDeEspanol from "./horas-de-espanol"
 // Update the clock every minute
 clock.granularity = "minutes";
 
@@ -16,12 +18,26 @@ clock.ontick = (evt) => {
   const horas = hoy.getHours();
   const minutos = hoy.getMinutes();
   const {
+    clockDisplay
+  } = preferences
+
+  const usarHorasCortas = clockDisplay === "12h" ? true : false
+  const usarEnPunto = getRandomItem([1, 0])
+  const usarCon = getRandomItem([0, 1])
+  const usarY = getRandomItem([1, 0])
+
+  const {
     tiempo,
     horasLeteras,
     preMinuto,
     minutosLeteras,
     cuando
-  } = horasDeEspanol(horas, minutos)
+  } = horasDeEspanol(horas, minutos, {
+    usarEnPunto,
+    usarHorasCortas,
+    usarCon,
+    usarY
+  })
   vez.text = `${tiempo}`
   hora.text = `${horasLeteras}`
   minuto.text = `${preMinuto} ${minutosLeteras}`
