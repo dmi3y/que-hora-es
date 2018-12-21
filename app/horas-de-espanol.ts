@@ -1,5 +1,4 @@
 import { escribeNumero } from "../common/numeros-de-espanol"
-import { type } from 'os';
 
 const MAX_MINUTOS_LENGTH = 15
 
