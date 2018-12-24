@@ -1,5 +1,4 @@
 import { me } from "appbit";
-import { preferences } from "user-settings";
 import * as fs from "fs";
 import * as messaging from "messaging";
 
@@ -7,11 +6,8 @@ const SETTINGS_TYPE = "cbor";
 const SETTINGS_FILE = "settings.cbor";
 
 export interface Usettings {
-    military: Boolean;
-};
-
-const { clockDisplay } = preferences;
-
+    military: boolean;
+}
 
 function loadSettings(): Usettings {
     try {
@@ -19,7 +15,7 @@ function loadSettings(): Usettings {
     } catch (ex) {
         // Defaults when no settings found
         return {
-            military: clockDisplay === "12h" ? false : true
+            military: null
         };
     }
 }

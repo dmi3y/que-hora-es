@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@fitbit/sdk": "~1.0.0",
-    "@fitbit/sdk-cli": "^1.0.0",
+    "@fitbit/sdk-cli": "^1.5.0",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.10",
     "fitbit-sdk-types": "^2.0.1",
@@ -37,5 +37,6 @@
     "build": "fitbit-build",
     "preversion": "npm run test",
     "postversion": "npm run build && cp build/app.fba releases/que-hora-es-${npm_package_version}.fba"
-  }
+  },
+  "dependencies": {}
 }

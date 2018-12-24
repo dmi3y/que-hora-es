@@ -1,5 +1,6 @@
 import clock from "clock";
 import document from "document";
+import { preferences } from "user-settings";
 import { getRandomItem } from "../common/utils";
 import init, { Usettings } from "./settings";
 import horasDeEspanol from "./horas-de-espanol";
@@ -11,6 +12,9 @@ const ampm = document.getElementById("ampm");
 const vez = document.getElementById("vez");
 const hora = document.getElementById("hora");
 const minuto = document.getElementById("minuto");
+
+// const { clockDisplay } = preferences;
+// clockDisplay === "12h" ? false : true
 
 const STATE: {
   settings: Usettings
@@ -25,13 +29,15 @@ const STATE: {
 }
 
 function render () {
-  const {
+  let {
     settings: {
       military
     },
     horas,
     minutos,
   } = STATE
+  if (military === null)
+    military = preferences.clockDisplay === '24h' ? true : false
   const usarHorasCortas = !military
 
   const usarEnPunto = getRandomItem([1, 0]);
