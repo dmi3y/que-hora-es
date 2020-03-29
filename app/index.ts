@@ -13,8 +13,8 @@ const vez = document.getElementById("vez");
 const hora = document.getElementById("hora");
 const minuto = document.getElementById("minuto");
 
-// const { clockDisplay } = preferences;
-// clockDisplay === "12h" ? false : true
+const { clockDisplay } = preferences;
+clockDisplay === "12h" ? false : true
 
 const STATE: {
   settings: Usettings
@@ -56,12 +56,12 @@ function render () {
     usarCon,
     usarY
   });
+    const tampm = military ? '' : cuando
+    vez && (vez.text = `${tiempo}`);
+    hora && (hora.text = `${horasLeteras}`);
+    minuto && (minuto.text = `${preMinuto} ${minutosLeteras}`);
+    ampm && (ampm.text = `${tampm}`);
 
-  const tampm = military ? '' : cuando
-  vez.text = `${tiempo}`;
-  hora.text = `${horasLeteras}`;
-  minuto.text = `${preMinuto} ${minutosLeteras}`;
-  ampm.text = `${tampm}`;
 }
 
 init((settings: Usettings) => {

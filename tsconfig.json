@@ -1,14 +1,3 @@
 {
-	"extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json",
-	"compilerOptions": {
-		"typeRoots": [
-			"node_modules",
-			"node_modules/types"
-		],
-		"types": [
-			"node",
-			"fitbit-sdk-types"
-		]
-	},
-	"include": ["**/*.ts", "**/*.tsx"]
+  "extends": "./node_modules/@fitbit/sdk/sdk-tsconfig.json"
 }
